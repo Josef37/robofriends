@@ -7,9 +7,16 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      robots: robots,
+      robots: undefined,
       searchString: ""
     };
+  }
+
+  componentDidMount() {
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then(response => response.json())
+      .then(users => this.setState({ robots: users }))
+      .catch(err => console.log(err));
   }
 
   onSearchChange = event => {
@@ -17,6 +24,10 @@ class App extends React.Component {
   };
 
   render() {
+    if (!this.state.robots) {
+      return <h1 className="tc f1">Loading</h1>;
+    }
+
     const filteredRobots = this.state.robots.filter(robot => {
       return this.state.searchString
         .toLowerCase()
