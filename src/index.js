@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { createStore, combineReducers, applyMiddleware } from "redux";
-import { createLogger } from "redux-logger";
 import thunkMiddleware from "redux-thunk";
 import "./index.css";
 import App from "./containers/App";
@@ -11,12 +10,14 @@ import "tachyons";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { searchRobots, requestRobots } from "./reducers";
 
-const logger = createLogger();
+const middlewares = [thunkMiddleware];
+if (process.env.NODE_ENV === "development") {
+  const { logger } = require("redux-logger");
+  middlewares.push(logger);
+}
+
 const rootReducer = combineReducers({ searchRobots, requestRobots });
-const store = createStore(
-  rootReducer,
-  applyMiddleware(thunkMiddleware, logger)
-);
+const store = createStore(rootReducer, applyMiddleware(...middlewares));
 
 ReactDOM.render(
   <ErrorBoundary>
