@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Scroll component doesn't crash without children 1`] = `"<div style={{...}} />"`;
+
+exports[`Scroll component renders correctly with children 1`] = `
+"<div style={{...}}>
+  <div />
+</div>"
+`;

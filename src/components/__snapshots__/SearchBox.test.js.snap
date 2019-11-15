@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchBox component renders correctly 1`] = `
+"<div className=\\"pa2\\">
+  <input className=\\"pa3 ba b--green bg-lightest-blue\\" type=\\"search\\" aria-label=\\"Search Robots\\" placeholder=\\"Search Robots\\" onChange={[Function: mockConstructor]} />
+</div>"
+`;

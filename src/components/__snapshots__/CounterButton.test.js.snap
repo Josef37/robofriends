@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`counts after clicking the counter 1`] = `
+"<CounterButton>
+  <button onClick={[Function: onClick]}>
+    Count: 
+    1
+  </button>
+</CounterButton>"
+`;
+
+exports[`renders component for the first time right 1`] = `
+"<button onClick={[Function: onClick]}>
+  Count: 
+  0
+</button>"
+`;

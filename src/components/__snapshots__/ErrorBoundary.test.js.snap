@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ErrorBoundary component renders error message when error occurs 1`] = `
+"<h1>
+  Ooooops! Something went wrong...
+</h1>"
+`;
+
+exports[`ErrorBoundary component renders nothing without error 1`] = `""`;

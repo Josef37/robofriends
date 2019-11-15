@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CardList component renders empty robots correctly 1`] = `"<div />"`;
+
+exports[`CardList component renders robots correctly 1`] = `
+"<div>
+  <Card id={1} name=\\"Robot\\" email=\\"robot@mail.com\\" />
+  <Card id={3} name=\\"Bot Bot\\" email=\\"bot@bot.com\\" />
+</div>"
+`;
