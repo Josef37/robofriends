@@ -14,8 +14,18 @@ jobs:
       - checkout
       - run: npm install
       - run: npm test
+  deploy:
+    docker:
+      - image: circleci/node:lts
+    steps:
+      - checkout
+      - run: npm install
+      - run: npm run deploy
 workflows:
   build_and_test:
     jobs:
       - build
       - test
+      - deploy:
+        requires:
+          - test
