@@ -14,20 +14,8 @@ jobs:
       - checkout
       - run: npm install
       - run: npm test
-  deploy:
-    docker:
-      - image: circleci/node:lts
-    steps:
-      - checkout
-      - run: git config --global user.email "josefwittmann42@gmail.com"
-      - run: git config --global user.name "Josef Wittmann"
-      - run: npm install
-      - run: npm run deploy
 workflows:
   build_test_deploy:
     jobs:
       - build
       - test
-      - deploy:
-          requires:
-            - test
