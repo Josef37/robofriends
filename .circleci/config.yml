@@ -5,4 +5,17 @@ jobs:
       - image: circleci/node:lts
     steps:
       - checkout
-      - run: echo "hello world"
+      - run: npm install
+      - run: npm run build
+  test:
+    docker:
+      - image: circleci/node:lts
+    steps:
+      - checkout
+      - run: npm install
+      - run: npm test
+workflows:
+  build_and_test:
+    jobs:
+      - build
+      - test
