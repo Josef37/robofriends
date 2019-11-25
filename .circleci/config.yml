@@ -22,10 +22,10 @@ jobs:
       - run: npm install
       - run: npm run deploy
 workflows:
-  build_and_test:
+  build_test_deploy:
     jobs:
       - build
       - test
       - deploy:
-        requires:
-          - test
+          requires:
+            - test
